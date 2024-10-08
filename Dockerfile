@@ -5,10 +5,7 @@ FROM openjdk:21-jdk-slim
 WORKDIR /app
 
 # Copy the JAR file from the build context to the container
-COPY build/libs/snippet-0.0.1-SNAPSHOT.jar app.jar
-
-# Copy the .env file to the container
-COPY .env .env
+COPY build/libs/backend-0.0.1-SNAPSHOT-plain.jar app.jar
 
 # Expose port 8080 to the host
 EXPOSE 8080
