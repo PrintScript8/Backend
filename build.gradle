@@ -26,6 +26,7 @@ repositories {
 			password = System.getenv("GITHUB_TOKEN")
 		}
 	}
+	maven { url 'https://plugins.gradle.org/m2/' } // Add this line
 }
 
 dependencies {
@@ -44,4 +45,12 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+jar {
+	manifest {
+		attributes(
+			'Main-Class': 'src.main.kotlin.austral.ingsis.backend.BackendApplication'
+		)
+	}
 }
