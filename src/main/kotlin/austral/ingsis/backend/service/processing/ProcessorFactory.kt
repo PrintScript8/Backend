@@ -13,7 +13,7 @@ class ProcessorFactory {
 
     @PostConstruct
     fun init() {
-        fileProcessorMap["text/plain"] = textProcessor
+        fileProcessorMap["txt"] = textProcessor
     }
 
     fun getProcessor(fileType: String): FileProcessor? {

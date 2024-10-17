@@ -11,6 +11,7 @@ fun main(args: Array<String>) {
     val dotenv = Dotenv.load()
 
     // Load environment variables into the system properties
+    // This is necessary so SpringBoot and SpringSecurity can access them
     System.setProperty("AUTH0_AUDIENCE", dotenv["AUTH0_AUDIENCE"])
     System.setProperty("AUTH_SERVER_URI", dotenv["AUTH_SERVER_URI"])
     System.setProperty("AUTH_CLIENT_ID", dotenv["AUTH_CLIENT_ID"])

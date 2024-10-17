@@ -21,7 +21,7 @@ class FileUploadController {
         if (file == null) {
             return ResponseEntity.badRequest().body("File could not be uploaded as it was received null")
         }
-        fileProcessingService.processFile(file)
+        val response = fileProcessingService.processFile(file)
         return ResponseEntity.ok("File uploaded successfully")
     }
 }
