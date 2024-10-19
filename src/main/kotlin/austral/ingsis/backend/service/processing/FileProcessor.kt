@@ -2,7 +2,6 @@ package austral.ingsis.backend.service.processing
 
 import org.springframework.web.multipart.MultipartFile
 
-
 interface FileProcessor {
     fun process(file: MultipartFile)
 }
