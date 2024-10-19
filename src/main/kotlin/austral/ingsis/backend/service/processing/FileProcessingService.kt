@@ -5,10 +5,10 @@ import org.springframework.web.multipart.MultipartFile
 
 @Service
 class FileProcessingService {
-
-    val processorFactory = ProcessorFactory()
+    // val processorFactory = ProcessorFactory()
 
     fun processFile(file: MultipartFile) {
+        println(file)
         // obtener filetype
         // usar filetype en el factory "getProcessor(filetype)"
         // todo: implement method
