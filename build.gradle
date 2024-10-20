@@ -39,6 +39,7 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
 	implementation 'org.jetbrains.kotlin:kotlin-reflect'
 	implementation "io.github.cdimascio:dotenv-java:2.2.0"
@@ -58,12 +59,4 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
-}
-
-jar {
-	manifest {
-		attributes(
-			'Main-Class': 'src.main.kotlin.austral.ingsis.backend.BackendApplication'
-		)
-	}
 }
