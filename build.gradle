@@ -49,6 +49,7 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
 	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
+	testImplementation 'io.mockk:mockk:1.12.0'
 
 	// IngSis Async communication
 	implementation 'org.austral.ingsis:redis-streams-mvc:0.1.13'
