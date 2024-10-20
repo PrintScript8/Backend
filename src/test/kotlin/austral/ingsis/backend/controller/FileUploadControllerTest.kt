@@ -1,6 +1,5 @@
-package austral.ingsis.backend
+package austral.ingsis.backend.controller
 
-import austral.ingsis.backend.controller.FileUploadController
 import austral.ingsis.backend.service.processing.FileProcessingService
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired

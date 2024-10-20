@@ -1,0 +1,33 @@
+name: Verify CI
+
+on:
+  push:
+    branches:
+      - 'main'
+      - 'dev'
+
+jobs:
+  verify_valid:
+    name: Verify valid image
+    uses: PrintScript8/ingsis-library/.github/workflows/on-pull-request.yml@main
+
+  publish_docker:
+    name: Publish Docker image
+    needs: verify_valid
+    uses: PrintScript8/ingsis-library/.github/workflows/docker-image.yml@main
+    with:
+      service_name: ${{ github.ref == 'refs/heads/main' && 'backend' || 'backend-dev' }}
+
+  rerun_image:
+    name: Rerun Docker image
+    needs: publish_docker
+    uses: PrintScript8/ingsis-library/.github/workflows/vm-login.yml@main
+    with:
+      service_name: ${{ github.ref == 'refs/heads/main' && 'backend' || 'backend-dev' }}
+      port: "8084"
+      is_dev: ${{ github.ref == 'refs/heads/dev' }}
+      is_image: true
+    secrets: inherit
+
+permissions:
+  packages: write
