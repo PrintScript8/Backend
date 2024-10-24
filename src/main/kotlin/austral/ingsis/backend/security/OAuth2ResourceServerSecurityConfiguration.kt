@@ -27,6 +27,7 @@ class OAuth2ResourceServerSecurityConfiguration(
     fun filterChain(http: HttpSecurity): SecurityFilterChain {
         http.authorizeHttpRequests {
             it
+                // todo: Estos son ejemplos, reemplazar en un futuro por los end points de mi app
                 .requestMatchers("/").permitAll()
                 .requestMatchers(GET, "/snippets").hasAuthority("SCOPE_read:snippets")
                 .requestMatchers(GET, "/snippets/*").hasAuthority("SCOPE_read:snippets")

@@ -1,4 +1,4 @@
-package austral.ingsis.backend.controller
+package austral.ingsis.backend.controller.upload
 
 import austral.ingsis.backend.service.processing.FileProcessingService
 import org.springframework.beans.factory.annotation.Autowired
